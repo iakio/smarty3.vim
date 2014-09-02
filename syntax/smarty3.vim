@@ -80,6 +80,7 @@ execute "syn region smartyZone matchgroup=Delimiter"
 " smarty comment
 execute "syn region smartyComment start=+" . b:smarty_left_delimiter
       \ . "\\*+ end=+\\*" . b:smarty_right_delimiter . "+"
+      \ . " containedin=ALL"
 
 
 
