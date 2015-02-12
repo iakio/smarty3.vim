@@ -52,6 +52,10 @@ syn keyword smartyTagName html_image html_options html_radios html_select_date
 syn keyword smartyTagName html_select_time html_table mailto math textformat
 
 
+" plugins
+syn keyword smartyTagName implode
+syn keyword smartyProperty separator
+
 " operators
 syn keyword smartyInFunc eq ne neq gt lt gte ge lte le not mod is div by even odd
 
