@@ -35,9 +35,9 @@ syn match smartyIdent contained "\[\w*\]"
 " modifiers
 syn keyword smartyModifier capitalize cat count_characters count_paragraphs
 syn keyword smartyModifier count_sentences count_words date_format default
-syn keyword smartyModifier escape indent lower nl2br regex_replace replace
-syn keyword smartyModifier spacify string_format strip strip_tags truncate
-syn keyword smartyModifier upper wordwrap
+syn keyword smartyModifier escape from_charset indent lower nl2br regex_replace
+syn keyword smartyModifier replace spacify string_format strip strip_tags
+syn keyword smartyModifier to_charset truncate unescape upper wordwrap
 
 " built-in functions
 syn keyword smartyTagName append assign block call capture config_load debug
