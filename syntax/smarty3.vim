@@ -56,8 +56,18 @@ syn keyword smartyTagName html_select_time html_table mailto math textformat
 syn keyword smartyTagName implode
 syn keyword smartyProperty separator
 
+
+"common php
+syn keyword smartyModifier intval
+syn keyword phpCommon isset
+
 " operators
 syn keyword smartyInFunc eq ne neq gt lt gte ge lte le not mod is div by even odd
+syn match phpOperator "[-=+%^&|*!.~?:]" contained display
+syn match phpOperator "[-+*/%^&|.]=" contained display
+syn match phpOperator "&&\|\<and\>" contained display
+syn match phpOperator "||\|\<x\=or\>" contained display
+
 
 " Number
 syn match smartyNumber contained "-\=\<\d\+\>"
@@ -80,7 +90,7 @@ syn region smartyString contained start=+'+ skip=+\\\\\|\\'+ end=+'+
 syn region smartyString contained start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=smartyBacktick
 syn region smartyBacktick contained start=+`+ end=+`+ contains=smartyIdent
 
-syn cluster smartyGroup contains=smartyModifier,smartyTagName,smartyInFunc,smartyNumber,smartyProperty,smartyConstant,smartyString,smartyBacktick,smartyBlock,smartyIdent
+syn cluster smartyGroup contains=smartyModifier,smartyTagName,smartyInFunc,smartyNumber,smartyProperty,smartyConstant,smartyString,smartyBacktick,smartyBlock,smartyIdent,phpCommon,phpOperator
 
 " smarty region
 execute "syn region smartyZone matchgroup=Delimiter"
@@ -98,11 +108,13 @@ execute "syn region smartyComment start=+" . b:smarty_left_delimiter
 
 hi link smartyString String
 hi link smartyBacktick Function
+hi link phpCommon Function
 hi link smartyTagName Type
 hi link smartyIdent Identifier
 hi link smartyVarSelector Statement
 hi link smartyComment Comment
 hi link smartyNumber Constant
+hi link phpOperator Operator
 
 if main_syntax == 'smarty'
   unlet main_syntax
