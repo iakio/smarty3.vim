@@ -55,6 +55,14 @@ syn keyword smartyTagName html_select_time html_table mailto math textformat
 " operators
 syn keyword smartyInFunc eq ne neq gt lt gte ge lte le not mod is div by even odd
 
+" Number
+syn match smartyNumber contained "-\=\<\d\+\>"
+syn match smartyNumber contained "\<0x\x\{1,8}\>"
+
+" Float
+syn match smartyNumber contained "\(-\=\<\d+\|-\=\)\.\d\+\>"
+
+
 syn keyword smartyProperty contained "file="
 syn keyword smartyProperty contained "loop="
 syn keyword smartyProperty contained "name="
@@ -68,7 +76,7 @@ syn region smartyString contained start=+'+ skip=+\\\\\|\\'+ end=+'+
 syn region smartyString contained start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=smartyBacktick
 syn region smartyBacktick contained start=+`+ end=+`+ contains=smartyIdent
 
-syn cluster smartyGroup contains=smartyModifier,smartyTagName,smartyInFunc,smartyProperty,smartyConstant,smartyString,smartyBacktick,smartyBlock,smartyIdent
+syn cluster smartyGroup contains=smartyModifier,smartyTagName,smartyInFunc,smartyNumber,smartyProperty,smartyConstant,smartyString,smartyBacktick,smartyBlock,smartyIdent
 
 " smarty region
 execute "syn region smartyZone matchgroup=Delimiter"
@@ -90,6 +98,7 @@ hi link smartyTagName Type
 hi link smartyIdent Identifier
 hi link smartyVarSelector Statement
 hi link smartyComment Comment
+hi link smartyNumber Constant
 
 if main_syntax == 'smarty'
   unlet main_syntax
