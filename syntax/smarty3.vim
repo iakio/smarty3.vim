@@ -77,12 +77,7 @@ syn match smartyNumber contained "\<0x\x\{1,8}\>"
 syn match smartyNumber contained "\(-\=\<\d+\|-\=\)\.\d\+\>"
 
 
-syn keyword smartyProperty contained "file="
-syn keyword smartyProperty contained "loop="
-syn keyword smartyProperty contained "name="
-syn keyword smartyProperty contained "include="
-syn keyword smartyProperty contained "skip="
-syn keyword smartyProperty contained "section="
+syn keyword smartyProperty file loop name skip section value var
 
 syn keyword smartyConstant "\$smarty"
 
@@ -109,11 +104,13 @@ execute "syn region smartyComment start=+" . b:smarty_left_delimiter
 hi link smartyString String
 hi link smartyBacktick Function
 hi link phpCommon Function
+hi link smartyModifier Type
 hi link smartyTagName Type
 hi link smartyIdent Identifier
 hi link smartyVarSelector Statement
 hi link smartyComment Comment
 hi link smartyNumber Constant
+hi link smartyProperty Statement
 hi link phpOperator Operator
 
 if main_syntax == 'smarty'
