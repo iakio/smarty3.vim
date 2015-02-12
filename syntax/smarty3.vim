@@ -44,7 +44,7 @@ syn keyword smartyTagName append assign block call capture config_load debug
 syn keyword smartyTagName extends for foreach foreachelse function
 syn keyword smartyTagName if elseif else include include_php insert
 syn keyword smartyTagName ldelim rdelim literal nocache php section sectionelse
-syn keyword smartyTagName strip while
+syn keyword smartyTagName setfilter strip while
 
 " custom functions
 syn keyword smartyTagName counter cycle eval fetch html_checkboxes
