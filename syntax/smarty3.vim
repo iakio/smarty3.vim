@@ -32,7 +32,7 @@ syn match smartyIdent contained "\.\h\w*"
 syn match smartyIdent contained "->\h\w*"
 syn match smartyIdent contained "\[\w*\]"
 
-" modifires
+" modifiers
 syn keyword smartyModifier capitalize cat count_characters count_paragraphs
 syn keyword smartyModifier count_sentences count_words date_format default
 syn keyword smartyModifier escape indent lower nl2br regex_replace replace
